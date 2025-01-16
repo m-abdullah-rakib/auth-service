@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/auth_service_dev
+    username: micro
+    password: micro
+  jpa:
+    properties:
+      hibernate:
+        ddl-auto: validate
+  logging:
+    level:
+      org.flywaydb: DEBUG
