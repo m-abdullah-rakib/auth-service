@@ -7,6 +7,12 @@ spring:
     properties:
       hibernate:
         ddl-auto: validate
-  logging:
-    level:
-      org.flywaydb: DEBUG
+  jmx:
+    enabled: false
+logging:
+  level:
+    org.flywaydb: DEBUG
+#    root: DEBUG
+#    org.springframework.web: DEBUG
+#    org.hibernate: DEBUG
+#    com.dp.authservice: DEBUG

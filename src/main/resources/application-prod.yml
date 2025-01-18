@@ -7,3 +7,10 @@ spring:
     properties:
       hibernate:
         ddl-auto: none
+logging:
+  level:
+    org.flywaydb: INFO
+#    root: INFO
+#    org.springframework.web: INFO
+#    org.hibernate: WARN
+#    com.dp.authservice: INFO
