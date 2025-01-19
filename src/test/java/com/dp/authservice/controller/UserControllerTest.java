@@ -50,7 +50,7 @@ class UserControllerTest {
     }
 
     @Test
-    @WithMockUser // Mock authentication if needed
+    @WithMockUser
     void createUser_ValidInput_ReturnsCreatedUser() throws Exception {
         when(userService.createUser(any(UserRequest.class))).thenReturn(userResponse);
 
