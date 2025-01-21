@@ -1,5 +1,6 @@
 package com.dp.authservice.exception;
 
+import io.swagger.v3.oas.annotations.Hidden;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 
 import java.util.stream.Collectors;
 
+@Hidden
 @ControllerAdvice
 public class ApiExceptionHandler {
 
@@ -21,7 +23,7 @@ public class ApiExceptionHandler {
 
     @ExceptionHandler(UserNotFoundException.class)
     public ResponseEntity<ApiErrorResponse> handleUserNotFoundException(UserNotFoundException ex, WebRequest request) {
-        logger.error("Resource not found: {}", ex.getMessage(), ex);
+        logger.error("User not found: {}", ex.getMessage(), ex);
         ApiErrorResponse response = createErrorResponse(HttpStatus.NOT_FOUND, "User Not Found", ex.getMessage());
         return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
     }

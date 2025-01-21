@@ -32,7 +32,7 @@ public class LoggingAspect {
     }
 
     //Logging thrown exception
-    @AfterThrowing(pointcut = "execution(* com.dp.authservice..*.*(..))", throwing = "exception")
+    @AfterThrowing(pointcut = "execution(* com.dp.authservice.service..*.*(..))", throwing = "exception")
     public void logAfterThrowing(JoinPoint joinPoint, Exception exception) {
         if (logger.isErrorEnabled()) {
             logger.error("Exception thrown at {}. Exception message: {}", joinPoint.getSignature().toShortString(), exception.getMessage(), exception);
